@@ -13,17 +13,13 @@ test("divide six by two is three", () => {
   expect(actual).toBe(expected);
 });
 
-test("divide by zero returns Infinity", () => {
+test("divide by zero throws an error", () => {
   // Arrange
   const a: number = 5;
   const b: number = 0;
-  const expected: number = Infinity;
 
-  // Act
-  const actual = divide(a, b);
-
-  // Assert
-  expect(actual).toBe(expected);
+  // Act & Assert
+  expect(() => divide(a, b)).toThrow("Division durch 0 ist nicht erlaubt");
 });
 
 
